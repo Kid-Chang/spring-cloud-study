@@ -1,0 +1,26 @@
+server:
+  port: 8888
+
+spring:
+  application:
+    name: config-service
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+  cloud:
+    config:
+      server:
+        git:
+          uri: file://D:\dev\spring-cloud\service\spring-config
+          # uri: https://github.com/username/spring-cloud-config-repo
+          ## ???? ?????? ??
+          # username: username
+          # password: password
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, busrefresh

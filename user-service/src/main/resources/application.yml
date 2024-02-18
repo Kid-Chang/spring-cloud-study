@@ -5,6 +5,11 @@ server:
 spring:
   application:
     name: user-service
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
   h2:
     console:
       enabled: true
@@ -26,4 +31,17 @@ eureka:
 greeting:
   message: Hello, ${spring.application.name}
 
+logging:
+  level:
+    com.example.userservice: DEBUG
 
+
+#token:
+#  expiration_time: 86400000
+#  secret: user-service-secret-secret-secret
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh, health, beans, busrefresh
