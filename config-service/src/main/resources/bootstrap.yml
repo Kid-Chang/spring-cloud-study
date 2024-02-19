@@ -1,0 +1,6 @@
+encrypt:
+#  key: abcedfghijklmnopqrstuvwxyz1234567890
+  key-store:
+    location: file:///D:\dev\spring-cloud\keystore\apiEncryptionKey.jks
+    password: test1234
+    alias: apiEncryptionKey
