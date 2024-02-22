@@ -1,6 +1,8 @@
 package com.example.userservice.service;
 
+import com.example.userservice.client.OrderServiceClient;
 import com.example.userservice.dto.UserDto;
+import com.example.userservice.error.FeignErrorDecoder;
 import com.example.userservice.repository.UserEntity;
 import com.example.userservice.repository.UserRepository;
 import com.example.userservice.vo.ResponseOrder;
@@ -29,7 +31,10 @@ public class UserServiceImpl implements UserService {
     BCryptPasswordEncoder bCryptPasswordEncoder;
 
     Environment env;
-    RestTemplate restTemplate;
+//    RestTemplate restTemplate;
+    OrderServiceClient orderServiceClient;
+
+    FeignErrorDecoder feignErrorDecoder;
 
     public UserDto createUser(UserDto userDto) {
         userDto.setUserId(UUID.randomUUID().toString());
@@ -57,13 +62,24 @@ public class UserServiceImpl implements UserService {
         UserDto userDto = modelMapper.map(userEntity, UserDto.class);
         List<ResponseOrder> ordersList = new ArrayList<>();
         /* Using as rest template */
-        String orderUrl = String.format(env.getProperty("order_service.url"), userId);
-        ResponseEntity<List<ResponseOrder>> orderListResponse =
-                restTemplate.exchange(orderUrl, HttpMethod.GET, null,
-                                            new ParameterizedTypeReference<List<ResponseOrder>>() {
-                });
-        // ParameterizedTypeReference<List<ResponseOrder>>에서 ParameterizedTypeReference는 특정 타입 받겠다고 선언, List<ResponseOrder>는 orders api에서 받을 타입
-        ordersList = orderListResponse.getBody();
+//        String orderUrl = String.format(env.getProperty("order_service.url"), userId);
+//        ResponseEntity<List<ResponseOrder>> orderListResponse =
+//                restTemplate.exchange(orderUrl, HttpMethod.GET, null,
+//                                            new ParameterizedTypeReference<List<ResponseOrder>>() {
+//                });
+//        // ParameterizedTypeReference<List<ResponseOrder>>에서 ParameterizedTypeReference는 특정 타입 받겠다고 선언, List<ResponseOrder>는 orders api에서 받을 타입
+//        ordersList = orderListResponse.getBody();
+
+        /* Using as FeignClient */
+//        try {
+//            ordersList = orderServiceClient.getOrders(userId);
+//        } catch (Exception ex) {
+//            ex.printStackTrace();
+//        }
+
+        /* Using as FeignClient with ErrorDecoder */
+        ordersList = orderServiceClient.getOrders(userId);
+
 
         userDto.setOrders(ordersList);
 

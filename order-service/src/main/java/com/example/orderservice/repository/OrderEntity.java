@@ -12,7 +12,7 @@ import org.hibernate.annotations.ColumnDefault;
 
 @Data
 @Entity
-@Table(name = "catalog")
+@Table(name = "orders")
 public class OrderEntity implements Serializable {
     @Id
     @GeneratedValue(strategy = jakarta.persistence.GenerationType.IDENTITY)

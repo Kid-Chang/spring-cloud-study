@@ -23,6 +23,9 @@ spring:
           uri: lb://order-service
           predicates:
             - Path=/order-service/**
+          filters:
+            - RemoveRequestHeader=Cookie
+            - RewritePath=/order-service/(?<segment>.*), /$\{segment}
         - id: catalog-service
           uri: lb://catalog-service
           predicates:

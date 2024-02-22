@@ -5,9 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9ff517d5-6592-4fb0-bbcd-5208325c9097" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/userservice/client/OrderServiceClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/userservice/error/FeignErrorDecoder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apigateway-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../apigateway-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apigateway-service/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../apigateway-service/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../order-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../order-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../order-service/src/main/java/com/example/orderservice/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../order-service/src/main/java/com/example/orderservice/controller/OrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../order-service/src/main/java/com/example/orderservice/repository/OrderEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../order-service/src/main/java/com/example/orderservice/repository/OrderEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../order-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../order-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../order-service/target/classes/com/example/orderservice/controller/OrderController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../order-service/target/classes/com/example/orderservice/controller/OrderController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/userservice/UserServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/userservice/UserServiceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/userservice/service/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/userservice/service/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/userservice/UserServiceApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/userservice/UserServiceApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/userservice/service/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/userservice/service/UserServiceImpl.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,7 +53,9 @@
   &quot;associatedIndex&quot;: 3
 }</component>
   <component name="ProjectId" id="2btTdTjUhbztl2M7fpsQIzjhqQ3" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -107,7 +123,7 @@
       <workItem from="1707823213848" duration="2888000" />
       <workItem from="1707887799926" duration="12206000" />
       <workItem from="1708137892821" duration="16053000" />
-      <workItem from="1708318022103" duration="8162000" />
+      <workItem from="1708318022103" duration="14152000" />
     </task>
     <servers />
   </component>
@@ -123,14 +139,9 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/userservice/service/UserServiceImpl.java</url>
-          <line>65</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/userservice/service/UserServiceImpl.java</url>
-          <line>57</line>
-          <option name="timeStamp" value="3" />
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/userservice/error/FeignErrorDecoder.java</url>
+          <line>25</line>
+          <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

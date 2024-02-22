@@ -31,7 +31,7 @@ greeting:
 
 logging:
   level:
-    com.example.userservice: DEBUG
+    com.example.userservice.client: DEBUG
 
 
 #token:

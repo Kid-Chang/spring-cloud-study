@@ -1,15 +1,19 @@
 package com.example.userservice;
 
+import com.example.userservice.error.FeignErrorDecoder;
+import feign.Logger;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.client.RestTemplate;
 
 @SpringBootApplication
 @EnableDiscoveryClient
+@EnableFeignClients
 public class UserServiceApplication {
 
     public static void main(String[] args) {
@@ -21,10 +25,21 @@ public class UserServiceApplication {
         return new BCryptPasswordEncoder();
     }
 
+//    @Bean
+//    @LoadBalanced
+//    public RestTemplate getRestTemplate() {
+//        return new RestTemplate();
+//    }
+
     @Bean
-    @LoadBalanced
-    public RestTemplate getRestTemplate() {
-        return new RestTemplate();
+    public Logger.Level feignLoggerLevel() {
+        return Logger.Level.FULL;
     }
+
+    // 컴포넌트로 등록했기 때문에 빈으로 등록할 필요가 없다.
+//    @Bean
+//    FeignErrorDecoder feignErrorDecoder() {
+//        return new FeignErrorDecoder();
+//    }
 
 }
