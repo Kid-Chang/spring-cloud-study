@@ -18,6 +18,7 @@ public class FeignErrorDecoder implements ErrorDecoder {
     @Override
     public Exception decode(String methodKey, Response response) {
         log.info("FeignErrorDecoder methodKey: {}", methodKey);
+        log.info("FeignErrorDecoder status: {}", response.status());
         switch (response.status()){
             case 400:
                 break;
@@ -25,7 +26,7 @@ public class FeignErrorDecoder implements ErrorDecoder {
                 // 원래는 500번대 에러가 발생했지만, 이 에러를 404로 변경
                 if(methodKey.contains("getOrders")){
                     return new ResponseStatusException(HttpStatus.valueOf(response.status()),
-                        env.getProperty("order-service.exception.orders_is_empty"));
+                        env.getProperty("order_service.exception.orders_is_empty"));
                 }
                 break;
             default:

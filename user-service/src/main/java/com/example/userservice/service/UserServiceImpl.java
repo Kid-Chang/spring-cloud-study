@@ -10,8 +10,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.convention.MatchingStrategies;
+import org.springframework.cloud.client.circuitbreaker.CircuitBreaker;
+import org.springframework.cloud.client.circuitbreaker.CircuitBreakerFactory;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.core.env.Environment;
 import org.springframework.http.HttpMethod;
@@ -25,6 +28,7 @@ import org.springframework.web.client.RestTemplate;
 
 @Service
 @AllArgsConstructor
+@Slf4j
 public class UserServiceImpl implements UserService {
 
     UserRepository userRepository;
@@ -34,7 +38,10 @@ public class UserServiceImpl implements UserService {
 //    RestTemplate restTemplate;
     OrderServiceClient orderServiceClient;
 
-    FeignErrorDecoder feignErrorDecoder;
+    // Bean에 등록했기때문에 여기서 호출할 필요가 없다.
+    // FeignErrorDecoder feignErrorDecoder;
+
+    CircuitBreakerFactory circuitBreakerFactory;
 
     public UserDto createUser(UserDto userDto) {
         userDto.setUserId(UUID.randomUUID().toString());
@@ -78,9 +85,16 @@ public class UserServiceImpl implements UserService {
 //        }
 
         /* Using as FeignClient with ErrorDecoder */
-        ordersList = orderServiceClient.getOrders(userId);
+//        ordersList = orderServiceClient.getOrders(userId);
 
-
+        /* Using as FeignClient with CircuitBreaker */
+        log.info("Before call orders microservice");
+        CircuitBreaker circuitBreaker = circuitBreakerFactory.create("circuitbreaker");
+        // CircuitBreaker가 run 했을때 getOrders가 정상작동하면 해당 값을 담고 오류가 발생하면 빈 리스트를 반환한다.
+        ordersList = circuitBreaker.run(() ->
+            orderServiceClient.getOrders(userId), throwable -> new ArrayList<>()
+        );
+        log.info("After call orders microservice");
         userDto.setOrders(ordersList);
 
         return userDto;

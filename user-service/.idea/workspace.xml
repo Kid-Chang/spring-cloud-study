@@ -5,22 +5,46 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9ff517d5-6592-4fb0-bbcd-5208325c9097" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/userservice/client/OrderServiceClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/userservice/error/FeignErrorDecoder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../catalog-service/src/main/java/com/example/catalogservice/messageQueue/KafkaConsumer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../catalog-service/src/main/java/com/example/catalogservice/messageQueue/KafkaConsumerConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../config-service/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../config-service/apiEncryptionKey.jks" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../order-service/src/main/java/com/example/orderservice/dto/Field.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../order-service/src/main/java/com/example/orderservice/dto/KafkaOrderDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../order-service/src/main/java/com/example/orderservice/dto/Payload.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../order-service/src/main/java/com/example/orderservice/dto/Schema.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../order-service/src/main/java/com/example/orderservice/messageQueue/KafkaProducer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../order-service/src/main/java/com/example/orderservice/messageQueue/KafkaProducerConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../order-service/src/main/java/com/example/orderservice/messageQueue/OrderProducer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/userservice/config/MetricsConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/userservice/config/Resilience4JConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apigateway-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../apigateway-service/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../apigateway-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../apigateway-service/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../apigateway-service/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../apigateway-service/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../catalog-service/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../catalog-service/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../catalog-service/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../catalog-service/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../catalog-service/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../catalog-service/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../catalog-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../catalog-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../catalog-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../catalog-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../catalog-service/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../catalog-service/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../config-service/src/main/resources/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../config-service/src/main/resources/bootstrap.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../order-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../order-service/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../order-service/src/main/java/com/example/orderservice/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../order-service/src/main/java/com/example/orderservice/controller/OrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../order-service/src/main/java/com/example/orderservice/repository/OrderEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../order-service/src/main/java/com/example/orderservice/repository/OrderEntity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../order-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../order-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../order-service/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../order-service/target/classes/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../order-service/target/classes/com/example/orderservice/controller/OrderController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../order-service/target/classes/com/example/orderservice/controller/OrderController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../order-service/target/classes/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../order-service/target/classes/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../order-service/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../order-service/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-config" beforeDir="false" afterPath="$PROJECT_DIR$/../spring-config" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/userservice/UserServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/userservice/UserServiceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/userservice/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/userservice/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/userservice/error/FeignErrorDecoder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/userservice/error/FeignErrorDecoder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/userservice/service/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/userservice/service/UserServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/userservice/UserServiceApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/userservice/UserServiceApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/userservice/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/userservice/controller/UserController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/userservice/service/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/userservice/service/UserServiceImpl.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -123,7 +147,7 @@
       <workItem from="1707823213848" duration="2888000" />
       <workItem from="1707887799926" duration="12206000" />
       <workItem from="1708137892821" duration="16053000" />
-      <workItem from="1708318022103" duration="14152000" />
+      <workItem from="1708318022103" duration="34849000" />
     </task>
     <servers />
   </component>
@@ -140,7 +164,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/userservice/error/FeignErrorDecoder.java</url>
-          <line>25</line>
+          <line>26</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
