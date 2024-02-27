@@ -13,8 +13,8 @@ spring:
     config:
       server:
         git:
-          uri: file://D:\dev\spring-cloud\service\spring-config
-          # uri: https://github.com/username/spring-cloud-config-repo
+          # uri: file://D:\dev\spring-cloud\service\spring-config
+          uri: https://github.com/Kid-Chang/spring-cloud-config
           ## ???? ?????? ??
           # username: username
           # password: password

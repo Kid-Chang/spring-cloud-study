@@ -45,8 +45,9 @@ public class OrderController {
         OrderDto orderDto = new ModelMapper().map(orderDetails, OrderDto.class);
         orderDto.setUserId(userId);
 
-//        OrderDto createOrder = orderService.createOrder(orderDto);
-//        ResponseOrder responseOrder = new ModelMapper().map(createOrder, ResponseOrder.class);
+        // jpa
+        OrderDto createOrder = orderService.createOrder(orderDto);
+        ResponseOrder responseOrder = new ModelMapper().map(createOrder, ResponseOrder.class);
 
         // kafka
         orderDto.setOrderId(UUID.randomUUID().toString());
@@ -55,9 +56,9 @@ public class OrderController {
         // 카프카에 메시지 전송해서 주문 생성 이벤트 발생
         // -> catalog-service에서 해당 상품의 재고를 주문 수량에 맞춰 차감시킬 수 있도록.
         kafkaProducer.send("example-catalog-topic", orderDto);
-        orderProducer.send("orders", orderDto);
+//        orderProducer.send("orders", orderDto);
 
-        ResponseOrder responseOrder = new ModelMapper().map(orderDto, ResponseOrder.class);
+//        ResponseOrder responseOrder = new ModelMapper().map(orderDto, ResponseOrder.class);
 
         log.info("After add orders data");
 
@@ -73,13 +74,15 @@ public class OrderController {
         orderList.forEach(v -> {
             result.add(new ModelMapper().map(v, ResponseOrder.class));
         });
-        try{
-            Thread.sleep(1000);
-            throw new Exception("장애 발생");
 
-        } catch (InterruptedException ex){
-            log.warn(ex.getMessage());
-        }
+//        resilience4j 테스트를 위한 임시 코드
+//        try{
+//            Thread.sleep(1000);
+//            throw new Exception("장애 발생");
+//
+//        } catch (InterruptedException ex){
+//            log.warn(ex.getMessage());
+//        }
 
         log.info("After retrieve orders data");
 

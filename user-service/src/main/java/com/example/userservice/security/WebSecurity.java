@@ -47,8 +47,8 @@ public class WebSecurity{
                     .requestMatchers(new AntPathRequestMatcher("/h2-console/**")).permitAll()
                     .requestMatchers(new AntPathRequestMatcher("/health_check")).permitAll()
 //                        .requestMatchers("/**").access(this::hasIpAddress)
-                    .requestMatchers("/**").access(
-                        new WebExpressionAuthorizationManager("hasIpAddress('127.0.0.1') or hasIpAddress('172.30.1.48')"))
+//                    .requestMatchers("/**").access(
+//                        new WebExpressionAuthorizationManager("hasIpAddress('127.0.0.1') or hasIpAddress(env.getProperty('gateway.ip'))"))
                     .anyRequest().authenticated()
             )
             .authenticationManager(authenticationManager)

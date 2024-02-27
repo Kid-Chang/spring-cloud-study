@@ -1,0 +1,11 @@
+com\example\catalogservice\catalog\CatalogController.class
+com\example\catalogservice\repository\CatalogEntity.class
+com\example\catalogservice\repository\CatalogRepository.class
+com\example\catalogservice\messageQueue\KafkaConsumer.class
+com\example\catalogservice\service\CatalogService.class
+com\example\catalogservice\CatalogServiceApplication.class
+com\example\catalogservice\messageQueue\KafkaConsumer$1.class
+com\example\catalogservice\messageQueue\KafkaConsumerConfig.class
+com\example\catalogservice\dto\CatalogDto.class
+com\example\catalogservice\vo\ResponseCatalog.class
+com\example\catalogservice\service\CatalogServiceImpl.class
