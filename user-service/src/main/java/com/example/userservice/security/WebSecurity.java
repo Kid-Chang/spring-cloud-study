@@ -39,17 +39,18 @@ public class WebSecurity{
         http.csrf( (csrf) -> csrf.disable());
 //        http.csrf(AbstractHttpConfigurer::disable);
 
-
+        String gatewayIp = env.getProperty("gateway.ip");
         http.authorizeHttpRequests((authz) -> authz
-                    .requestMatchers(new AntPathRequestMatcher("/actuator/**")).permitAll()
-                    .requestMatchers(new AntPathRequestMatcher("/h2-console/**")).permitAll()
-                    .requestMatchers(new AntPathRequestMatcher("/users", "POST")).permitAll()
-                    .requestMatchers(new AntPathRequestMatcher("/h2-console/**")).permitAll()
-                    .requestMatchers(new AntPathRequestMatcher("/health_check")).permitAll()
+//                    .requestMatchers(new AntPathRequestMatcher("/actuator/**")).permitAll()
+//                    .requestMatchers(new AntPathRequestMatcher("/h2-console/**")).permitAll()
+//                    .requestMatchers(new AntPathRequestMatcher("/users", "POST")).permitAll()
+//                    .requestMatchers(new AntPathRequestMatcher("/h2-console/**")).permitAll()
+//                    .requestMatchers(new AntPathRequestMatcher("/health_check")).permitAll()
+                    .requestMatchers(new AntPathRequestMatcher("/**")).permitAll()
 //                        .requestMatchers("/**").access(this::hasIpAddress)
 //                    .requestMatchers("/**").access(
-//                        new WebExpressionAuthorizationManager("hasIpAddress('127.0.0.1') or hasIpAddress(env.getProperty('gateway.ip'))"))
-                    .anyRequest().authenticated()
+//                        new WebExpressionAuthorizationManager(String.format("hasIpAddress('127.0.0.1') or hasIpAddress('%s')", gatewayIp)))
+//                    .anyRequest().authenticated()
             )
             .authenticationManager(authenticationManager)
             .sessionManagement((session) -> session
